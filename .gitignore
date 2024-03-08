@@ -1,3 +1,4 @@
 /distributions/*/*/settings/authorized_keys
 /distributions/*/*/settings/localpkgs
 settings/postfix-relay.inc.sh
+settings/ansibleuser.inc.sh
