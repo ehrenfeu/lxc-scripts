@@ -11,6 +11,7 @@ HOST_REL_NAME=$(lsb_release -c -s)
 
 BASEDIR="${LXCPATH:-/scratch/containers}"
 TGT_ROOT="$BASEDIR/$VM_HOSTNAME/rootfs"
+TGT_CONFIG="$BASEDIR/$VM_HOSTNAME/config"
 TGT_LOCALE="en_US.UTF-8"
 
 BRIDGE_DEV="${LXC_BRIDGE_DEV:-lxcbr0}"
