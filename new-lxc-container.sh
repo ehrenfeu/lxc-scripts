@@ -9,7 +9,13 @@ usage_exit() {
     echo
     echo "    $0 container_name distribution suite"
     echo
-    echo "    e.g.: $0 mysql_deb8 debian 8_jessie"
+    echo "Additional settings (via environment variables):"
+    echo
+    echo "    Set a MAC address for the container: VM_MAC=ee:ee:ee:01:23:45"
+    echo
+    echo "Example:"
+    echo
+    echo "    VM_MAC=ee:ee:ee:01:23:45 $0 revproxy debian 12_bookworm"
     echo
     exit "$1"
 }

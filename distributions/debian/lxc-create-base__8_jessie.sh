@@ -40,6 +40,11 @@ if [ -n "$DRY_RUN" ] ; then
 fi
 lxc-create --lxcpath="$BASEDIR" --name="$VM_HOSTNAME" -t "$DISTRIBUTION" -- --release="$SUITE"
 
+if [ -n "$VM_MAC" ]; then
+    echo "Setting container MAC address: [$VM_MAC]"
+    sed -i "s,^lxc.net.0.hwaddr.*,lxc.net.0.hwaddr = $VM_MAC," "$TGT_CONFIG"
+fi
+
 # set EATMYDATA to empty, will be overridden in one of the sourced scripts if enabled:
 EATMYDATA=""
 
