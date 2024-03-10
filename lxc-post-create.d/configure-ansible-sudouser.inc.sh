@@ -12,11 +12,10 @@ source "$ANSIBLEUSER_INC"
 
 chroot "$TGT_ROOT" adduser \
     --system \
+    --ingroup sudo \
     --home /var/lib/ansibleuser \
     --shell /bin/bash \
     --gecos "Ansible 'sudo' User" \
     ansibleuser
 
 echo "ansibleuser:$ANSIBLE_USER_PW" | chroot "$TGT_ROOT" chpasswd
-
-echo "ansibleuser ALL = (root) NOPASSWD:ALL" > "$TGT_ROOT"/etc/sudoers.d/ansibleuser
