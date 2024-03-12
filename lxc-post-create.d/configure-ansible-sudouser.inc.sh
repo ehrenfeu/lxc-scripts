@@ -11,6 +11,11 @@ if ! [ -f "$ANSIBLEUSER_INC" ]; then
     return
 fi
 
+if ! [ -f "$ANSIBLEUSER_PUBKEY" ]; then
+    echo "ERROR: public-key file [$ANSIBLEUSER_PUBKEY] is required!"
+    return
+fi
+
 source "$ANSIBLEUSER_INC"
 
 chroot "$TGT_ROOT" adduser \
