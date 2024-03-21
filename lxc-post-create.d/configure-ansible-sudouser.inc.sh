@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -o nounset
+set -o errexit
 
 ANSIBLEUSER_HOME=/var/lib/ansibleuser
 ANSIBLEUSER_INC="$(dirname "$0")/settings/ansibleuser.inc.sh"
